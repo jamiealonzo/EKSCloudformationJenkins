@@ -1,0 +1,14 @@
+# Create the EKS Cluster
+~ eksctl create cluster \
+> --name <jamie1> \
+> --region <us-east-1> \
+> --with-oidc \
+> --zones "<AVAILABILITY-ZONE-1>,<AVAILABILITY-ZONE-2>" \
+> --nodegroup-name <jamie> \
+> --nodes-min 2 \
+> --nodes-max 4 \
+> --enable-ssm \
+> --managed \
+> --asg-access
+# Verify that EKS nodes are up running
+~ kubectl get nodes
